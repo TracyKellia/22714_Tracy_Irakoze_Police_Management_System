@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Police Management System</title>
+	<link rel="stylesheet"
+		  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+		  crossorigin="anonymous">
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
+	<!-- Ionicons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
+	<!-- Theme style -->
+	<link rel="stylesheet" href="/dist/css/AdminLTE.min.css" />
+</head>
+<body>
+<div class="container">
+	<h1>Police Management System</h1>
+	<hr>
+	<h2>Save Prisoner</h2>
+
+	<form action="#" th:action="@{/savePrisoner}" th:object="${prisoner}"
+		  method="POST">
+		<input type="text" th:field="*{prisonerName}"
+			   placeholder="Prisoner Name" class="form-control mb-4 col-4">
+
+		<input type="text" th:field="*{victimName}"
+			   placeholder="Victim Name" class="form-control mb-4 col-4">
+
+		<input type="text" th:field="*{witnessName}"
+			   placeholder="Witness Name" class="form-control mb-4 col-4">
+		<input type="text" th:field="*{description}"
+			   placeholder="Description" class="form-control mb-4 col-4">
+
+		<button type="submit" class="btn btn-info col-2"> Save Prisoner</button>
+	</form>
+
+	<hr>
+
+	<a th:href = "@{/}"> Back to Prisoner List</a>
+</div>
+</body>
+</html>
